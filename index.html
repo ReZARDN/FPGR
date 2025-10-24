@@ -10,33 +10,80 @@
       color: #fff;
       margin: 40px;
     }
+
     h1 {
       color: #00ffcc;
+      text-align: center;
     }
-    .rule {
-      background: #222;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 15px;
+
+    h2 {
+      color: #ffcc00;
+      margin-top: 40px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #555;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+    }
+
+    tr:nth-child(even) {
+      background-color: #222; /* 偶数行の塗りつぶし */
+    }
+
+    tr:nth-child(odd) {
+      background-color: #1a1a1a; /* 奇数行の塗りつぶし */
     }
   </style>
 </head>
 <body>
-  <h1>🚓 ReZARD City ルール一覧</h1>
-  <div class="rule">
-    <h2>一般ルール</h2>
-    <ul>
-      <li>他プレイヤーへの迷惑行為は禁止</li>
-      <li>VC内での暴言禁止</li>
-    </ul>
-  </div>
 
-  <div class="rule">
-    <h2>警察ルール</h2>
-    <ul>
-      <li>職務中の不正行為は禁止</li>
-      <li>RPを大切に行動すること</li>
-    </ul>
-  </div>
+  <h1>🚓 ReZARD City ルール一覧</h1>
+
+  <h2>はじめに</h2>
+  <p>このページでは、サーバー内でのルールをまとめています。全員必ず確認してください。</p>
+
+  <h2>BANルール</h2>
+  <table>
+    <tr>
+      <th>違反内容</th>
+      <th>処罰内容</th>
+    </tr>
+    <tr>
+      <td>他プレイヤーへの迷惑行為</td>
+      <td>即BAN</td>
+    </tr>
+    <tr>
+      <td>チート・不正ツール使用</td>
+      <td>永久BAN</td>
+    </tr>
+  </table>
+
+  <h2>サーバールール</h2>
+  <table>
+    <tr>
+      <th>ルール内容</th>
+      <th>詳細</th>
+    </tr>
+    <tr>
+      <td>VCでの暴言禁止</td>
+      <td>すべてのプレイヤーに対して敬意を持つこと</td>
+    </tr>
+    <tr>
+      <td>職務中の不正行為禁止</td>
+      <td>警察・EMSなどの職業RPに支障をきたす行為禁止</td>
+    </tr>
+  </table>
+
 </body>
 </html>
