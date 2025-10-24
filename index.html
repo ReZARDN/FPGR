@@ -1,89 +1,101 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>FPGR</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #111;
-      color: #fff;
-      margin: 40px;
-    }
-
-    h1 {
-      color: #00ffcc;
-      text-align: center;
-    }
-
-    h2 {
-      color: #ffcc00;
-      margin-top: 40px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-
-    th, td {
-      border: 1px solid #555;
-      padding: 8px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #333;
-    }
-
-    tr:nth-child(even) {
-      background-color: #222; /* 偶数行の塗りつぶし */
-    }
-
-    tr:nth-child(odd) {
-      background-color: #1a1a1a; /* 奇数行の塗りつぶし */
-    }
-  </style>
+<meta charset="UTF-8">
+<title>ReZARD City ルール一覧</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 20px;
+  }
+  h1 {
+    color: #00ffcc;
+    text-align: center;
+  }
+  /* 目次リンク */
+  #toc a {
+    color: #ffcc00;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+  }
+  #toc a:hover {
+    text-decoration: underline;
+  }
+  h2 {
+    color: #ffcc00;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+  .content {
+    display: none;
+    margin-top: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  th, td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #333;
+  }
+  tr:nth-child(even) { background-color: #222; }
+  tr:nth-child(odd) { background-color: #1a1a1a; }
+</style>
 </head>
 <body>
 
-  <h1>🚓 ReZARD City ルール一覧</h1>
+<h1>🚓 ReZARD City ルール一覧</h1>
 
-  <h2>はじめに</h2>
-  <p>このページでは、サーバー内でのルールをまとめています。全員必ず確認してください。</p>
+<!-- 目次 -->
+<div id="toc">
+  <a href="#intro">はじめに</a>
+  <a href="#ban">BANルール</a>
+  <a href="#server">サーバールール</a>
+</div>
 
-  <h2>BANルール</h2>
+<!-- はじめに -->
+<h2 id="intro">はじめに</h2>
+<div class="content">
+  <p>このページではサーバー内でのルールをまとめています。全員必ず確認してください。</p>
+</div>
+
+<!-- BANルール -->
+<h2 id="ban">BANルール</h2>
+<div class="content">
   <table>
-    <tr>
-      <th>違反内容</th>
-      <th>処罰内容</th>
-    </tr>
-    <tr>
-      <td>他プレイヤーへの迷惑行為</td>
-      <td>即BAN</td>
-    </tr>
-    <tr>
-      <td>チート・不正ツール使用</td>
-      <td>永久BAN</td>
-    </tr>
+    <tr><th>違反内容</th><th>処罰内容</th></tr>
+    <tr><td>他プレイヤーへの迷惑行為</td><td>即BAN</td></tr>
+    <tr><td>チート・不正ツール使用</td><td>永久BAN</td></tr>
   </table>
+</div>
 
-  <h2>サーバールール</h2>
+<!-- サーバールール -->
+<h2 id="server">サーバールール</h2>
+<div class="content">
   <table>
-    <tr>
-      <th>ルール内容</th>
-      <th>詳細</th>
-    </tr>
-    <tr>
-      <td>VCでの暴言禁止</td>
-      <td>すべてのプレイヤーに対して敬意を持つこと</td>
-    </tr>
-    <tr>
-      <td>職務中の不正行為禁止</td>
-      <td>警察・EMSなどの職業RPに支障をきたす行為禁止</td>
-    </tr>
+    <tr><th>ルール内容</th><th>詳細</th></tr>
+    <tr><td>VCでの暴言禁止</td><td>全員に敬意を持つこと</td></tr>
+    <tr><td>職務中の不正行為禁止</td><td>警察・EMSなどの職業RPに支障をきたす行為禁止</td></tr>
   </table>
+</div>
+
+<script>
+  // 見出しクリックで開閉
+  document.querySelectorAll('h2').forEach(h => {
+    h.addEventListener('click', () => {
+      const content = h.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 
 </body>
 </html>
