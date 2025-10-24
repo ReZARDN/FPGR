@@ -1,13 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ReZARD City ルール一覧</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #0077cc;
+  }
+
+  /* 横スクロールカテゴリメニュー */
+  .category-menu {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 2px solid #ccc;
+    margin: 20px 0;
+  }
+
+  .category-menu button {
+    flex: 0 0 auto;
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+  }
+
+  .category-menu button.active {
+    background-color: #0077cc;
+    color: #fff;
+  }
+
+  /* カテゴリ内容 */
+  .category-content .content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  .category-content .content.active {
+    display: block;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  th, td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #eee;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }
+</style>
+</head>
+<body>
+
+<h1>🚓 ReZARD City ルール一覧</h1>
+
+<!-- 横スクロールカテゴリ -->
 <div class="category-menu">
-  <!-- 横スクロールでカテゴリを表示 -->
-  <button data-target="intro">はじめに</button>
+  <button class="active" data-target="intro">はじめに</button>
   <button data-target="ban">BANルール</button>
   <button data-target="server">サーバールール</button>
 </div>
 
 <div class="category-content">
-  <!-- 各カテゴリの内容 -->
-  <div id="intro" class="content">...</div>
-  <div id="ban" class="content">...</div>
-  <div id="server" class="content">...</div>
+  <!-- はじめに -->
+  <div id="intro" class="content active">
+    <p>このページでは、サーバー内でのルールをまとめています。全員必ず確認してください。</p>
+  </div>
+
+  <!-- BANルール -->
+  <div id="ban" class="content">
+    <table>
+      <tr><th>違反内容</th><th>処罰内容</th></tr>
+      <tr><td>他プレイヤーへの迷惑行為</td><td>即BAN</td></tr>
+      <tr><td>チート・不正ツール使用</td><td>永久BAN</td></tr>
+    </table>
+  </div>
+
+  <!-- サーバールール -->
+  <div id="server" class="content">
+    <table>
+      <tr><th>ルール内容</th><th>詳細</th></tr>
+      <tr><td>VCでの暴言禁止</td><td>全員に敬意を持つこと</td></tr>
+      <tr><td>職務中の不正行為禁止</td><td>警察・EMSなどの職業RPに支障をきたす行為禁止</td></tr>
+    </table>
+  </div>
 </div>
+
+<script>
+  // カテゴリ切り替え
+  const buttons = document.querySelectorAll('.category-menu button');
+  const contents = document.querySelectorAll('.category-content .content');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // ボタンのアクティブ切替
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // 内容の表示切替
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
